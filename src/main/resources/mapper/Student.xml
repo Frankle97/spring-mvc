@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hello.springmvc.basic.mapper.StudentMapper">
+
+    <select id="getStudents" resultType="hello.springmvc.basic.domain.Student">
+        SELECT * FROM TB_STUDENT
+    </select>
+
+    <select id="findByStudent" parameterType="hello.springmvc.basic.domain.Student" resultType="hello.springmvc.basic.domain.Student">
+        SELECT * FROM TB_STUDENT
+        WHERE id = #{id} AND name = #{name}
+    </select>
+
+    <insert id="regStudent" parameterType="hello.springmvc.basic.domain.Student">
+        INSERT INTO TB_STUDENT(
+       id, name, addr, tel
+        )
+        VALUES( #{id}, #{name}, #{addr}, #{tel}
+        )
+    </insert>
+
+    <delete id="removeStudent">
+        DELETE FROM TB_STUDENT
+    </delete>
+
+</mapper>
+

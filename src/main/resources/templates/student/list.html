@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>지구대학교 학생 정보</title>
+</head>
+<body>
+<h3>지구대학교 학생 정보</h3>
+<a type="button" th:href="@{/students/form.do}">신규 등록</a>
+<a type="button" th:href="@{/students/login.do}">로그인하기</a>
+<a type="button" th:href="@{/students/remove.do}">전체삭제</a>
+<table>
+    <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}">id</td>
+            <td th:text="${student.name}">name</td>
+            <td th:text="${student.addr}">addr</td>
+            <td th:text="${student.tel}">tel</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

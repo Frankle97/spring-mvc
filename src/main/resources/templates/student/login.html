@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>지구대학교 로그인 페이지</title>
+</head>
+<body>
+<a type="button" th:href="@{/students/list.do}">목록으로 돌아가기</a>
+<form action="/students/login.do" method="post">
+  아이디 : <input type="text" name="id" />
+  이름 : <input type="text" name="name" />
+  <button type="submit">로그인</button>
+</form>
+</body>
+</html>
